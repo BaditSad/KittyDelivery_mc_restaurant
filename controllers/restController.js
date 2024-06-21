@@ -19,13 +19,13 @@ async function getRestById(req, res) {
 // Function to get all restaurants
 async function getallRest(req, res) {
     try {
-        const users = await Rest.findAll();
-        res.json(users);
+      const restaurants = await Rest.findAll();
+      res.json(restaurants);
     } catch (err) {
-        console.error("Error: ", err);
-        res.status(500).json({ error: "Error" });
+      console.error("Error fetching restaurants: ", err);
+      res.status(500).json({ error: "Error fetching restaurants." });
     }
-}
+  }
 
 // Function to create a new restaurant
 async function createRest(req, res) {
